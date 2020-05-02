@@ -7,19 +7,37 @@ option java_outer_classname = "UserServiceProto";
 package com.example.userservice.grpc.v1;
 
 service UserService {
-    //get
+
     rpc GetUser(GetUserRequest) returns (User) {}
 
-    // delete
+    rpc CreateUser(CreateUserRequest) returns (User) {}
 
-    // patch
+    rpc DeleteUser(DeleteUserRequest) returns (User) {}
+
+    rpc PatchUser(PatchUserRequest) returns (User) {}
 }
 
 message GetUserRequest {
     string user_id = 1;
 }
 
+message CreateUserRequest {
+    int32 user_age = 1;
+    string user_name = 2;
+}
+
+message DeleteUserRequest {
+    string user_id = 1;
+}
+
+message PatchUserRequest {
+    string user_id = 1;
+    int32 user_age = 2;
+    string user_name = 3;
+}
+
 message User {
     string user_id = 1;
     int32 user_age = 2;
+    string user_name = 3;
 }

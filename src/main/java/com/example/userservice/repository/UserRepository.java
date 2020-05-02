@@ -10,21 +10,39 @@ public class UserRepository {
     public UserRepository() {
     }
 
-    public void saveUser(User user) {
+    public User createUser(User user) {
         // todo: actually save in repository
+
         System.out.println(user);
+
+        return user;
     }
 
-    public User getUser(String id) {
+    public User updateUser(User user) {
+        // todo: actually update in repository
+        System.out.println(user + " updated");
+
+        return user;
+    }
+
+    public User getUser(String userId) {
         // todo implement
         return User.newBuilder()
-                .setUserId(id)
+                .setUserId(userId)
                 .setUserAge(99)
+                .setUserName("PLACEHOLDER")
                 .build();
     }
 
-    public void deleteUser(String id) {
+    public User deleteUser(String userId) {
+
         // todo implement
-        System.out.println("User with id + " + id + " deleted");
+        System.out.println("User with id + " + userId + " deleted");
+
+        return User.newBuilder()
+                .setUserId(userId)
+                .setUserAge(99)
+                .setUserName("PLACEHOLDER")
+                .build();
     }
 }
